@@ -1,3 +1,7 @@
+# 1. define $content which is just rules for AI to follow
+# 2. provide CSV and loop through each line applying the $content  (need to add a step to flatten the json file first)
+# 3. split up the analysis into 2 different columns in csv: status and reasoning
+
 $baseURL = 'http://localhost:11434/v1'
 $content = @"
 You are an expert in data privacy and security, specializing in identifying PHI (Protected Health Information) and PII (Personally Identifiable Information). You have extensive knowledge in recognizing and mitigating risks associated with data breaches and bad actors who might attempt to access or misuse sensitive information, either intentionally or accidentally. Your expertise includes a deep understanding of legal and regulatory frameworks such as HIPAA (Health Insurance Portability and Accountability Act) for PHI and GDPR (General Data Protection Regulation) for PII, as well as advanced techniques for detecting and preventing unauthorized access.
