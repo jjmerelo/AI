@@ -86,9 +86,7 @@ foreach ($line in $csvContent) {
         }
 
         $jsonPayload = $payload | ConvertTo-Json -Depth 4
-
         $response = Invoke-RestMethod -Uri "$baseURL/chat/completions" -Method Post -Body $jsonPayload -ContentType "application/json"
-
         $finalanswer = $response.choices[0].message.content
 
         $status = if ($finalanswer -match 'Status:\s*(OK|FLAGGED)') { $matches[1] } else { "Unknown" }
