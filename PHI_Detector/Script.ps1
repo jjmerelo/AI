@@ -10,13 +10,13 @@ Identify and flag any lines that contain PHI, PII, or indicate potential malicio
 PII (Personally Identifiable Information):
 - **Birthdays:** Any specific date or date range indicating a person's birth.
   - Example: "John Doe was born on 12/25/1985."
-- **Email Addresses:** Any string containing an "@" symbol followed by a domain. It is very important to identify this
-  - Example: "Contact me at john.doe@example.com."
+- **Email Addresses:** Any string containing "@" and ".com" or ".org". Please be about identifying and flagging email addresses
+  - Example: "Contact me at john.doe@example.com." "hello@email.org" "steven@smith.com"
 - **Full Names:** Any text that includes first and last names together.
   - Example: "The report was authored by Jane Smith."
-- **Phone Numbers:** Sequences of numbers formatted as a phone number.
+- **Phone Numbers:** Sequences of numbers formatted as a phone number. This is always 10 numbers long
   - Example: "Call me at (555) 123-4567."
-- **Social Security Numbers:** Nine-digit numbers often formatted with dashes.
+- **Social Security Numbers:** Nine-digit numbers often formatted with dashes. Social Security Numbers will always have 9 digits and 2 dashes
   - Example: "Her SSN is 123-45-6789."
 - **Home Addresses:** Any combination of street address, city, state, and zip code.
   - Example: "Send the package to 123 Main St, Springfield, IL 62704."
@@ -41,6 +41,7 @@ Indications of Malicious Intent or Misuse of Data:
 
 Provide a explanation for each flagged line using no more than 8 words
 It is very important that your reason never exceeds more than 8 words
+If there is no PHI/PII and the STATUS is "OK" then the Reason should also be "OK"
 
 Output:
 - Status: Indicate whether the line is OK or FLAGGED.
